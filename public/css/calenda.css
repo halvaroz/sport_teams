@@ -1,0 +1,304 @@
+*{box-sizing: border-box;}
+
+.whole-container {font-family: Tahoma;}
+
+.my_cal_container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px
+}
+
+/* declare a 7 column grid on the table */
+.calendar__table {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  width: 100%;
+}
+
+.calendar__table tr, .calendar__table tbody {
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: repeat(7, 1fr);
+  width: 100%;
+}
+
+caption {
+  grid-column: 1 / -1;
+  font-size: 130%;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.calendar__table a {
+  color: black;
+  text-decoration: none;
+}
+
+.calendar__table td, .calendar__table th {
+  padding: 5px;
+  border: 1px solid #ccc;
+}
+
+.calendar__table .cal__weekdays {background: #8e352e;  }
+
+
+.calendar__table .cal__weekdays th {
+  color: #fff;
+  font-size: 13px;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 20px;
+  padding: 10px 6px;
+  border: none !important;
+}
+
+.calendar__table td {
+  display: flex;
+  flex-direction: column;
+  min-height: 100px;
+}
+
+.calendar__table .days li:hover {background-color: #d3d3d3;
+}
+
+.day__header a {
+  flex: 0 0 auto;
+  background-color: #333;
+  color: #fff;
+  width: 20px;
+  text-align: center;
+  margin-bottom: 5px;
+  padding: 4px;
+  border-radius: 50%;
+}
+
+.day__header  {
+  flex: 0 0 auto;
+  align-self: flex-start;
+  text-align: left;
+  border-radius: 50%;
+}
+
+.odd__event {
+  flex: 0 0 auto;
+  background: #dedc7a;
+  color: #463c8a;
+  font-size: 14px;
+  border-radius: 4px;
+  padding: 5px;
+  margin-bottom: 5px;
+  line-height: 14px;
+  border: 1px solid #b1d8e0;
+  text-decoration: none;
+}
+
+.even__event {
+  flex: 0 0 auto;
+  background: #b1d8e0;
+  color: #463c8a;
+  font-size: 14px;
+  border-radius: 4px;
+  padding: 5px;
+  margin-bottom: 5px;
+  line-height: 14px;
+  border: 1px solid #dedc7a;
+  text-decoration: none;
+}
+
+.calendar__table .calendar__event-desc {
+  color: #666;
+  margin: 3px 0 7px 0;
+  text-decoration: none;  
+}
+
+.calendar__table .calendar__othermonth {
+  background-color: #eee;
+  color: #666;
+}
+
+/* ============================
+        Mobile Responsiveness
+   ============================*/
+
+
+@media(max-width: 768px) {
+
+  .calendar__table .cal__weekdays, .calendar__table .calendar__othermonth {display: none;}
+
+  .calendar__table li {
+    height: auto !important;
+    border: 1px solid #ededed;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: -1px;
+  }
+  
+  .calendar__table, .calendar__table tr, .calendar__table tbody {grid-template-columns: 1fr;}
+  
+  .calendar__table  tr {grid-column: 1 / 2;}
+
+  .calendar__table .day__header {align-self: flex-start;}
+}
+
+@media only screen and (min-width: 1024px){
+  .whole-container {
+    display: grid;
+    grid-template-columns: 2fr 9fr;
+  }
+
+}
+
+@media only screen and (max-width: 1023px){
+  .club-list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+  }
+}
+
+.calendar__table .is-today {border: 2px dashed #55a;}
+
+.log__link{
+  display: block;
+  color: white;
+  background-color: #007bff;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: bold;
+  transition: transform 0.3s;
+  width: 200px;
+  padding: 0.5rem 3rem;
+  border-radius: 1rem;
+  border: 5px solid #007bff;
+}
+
+
+.club__link:hover, .log__link:hover {
+  color: #007bff;
+  background-color: white;
+  text-decoration: none;
+  transition: color  1000ms ease-in;
+  transition: background-color  1000ms ease-in;
+}
+
+
+.log__link:hover{background-color: lightblue; color:black;}
+
+
+.club-details {
+  background-color: lightblue;
+  color:black;
+  margin: 0.2rem;
+  padding:0.2rem;
+  text-align:  center;
+}
+
+.club-details a {
+  color: darkblue;
+  margin: 0 auto;
+}
+
+.club-details:hover, .club-light {
+  background-color: lightgreen;
+  border-radius: 0.7rem;
+  
+  transition: background-color  1000ms ease-in;
+  transition: color 1000ms ease-in;
+}
+
+.club-details:hover .side__team {
+  color: black;
+  text-decoration: none;
+}
+
+.club-light .side__team{color: black;}
+
+.club-light .b_l {color: red;}
+
+.b_l {
+  font-size: 1.3rem;
+  color: tomato;
+}
+
+.club-details:hover .b_l{color: #ff3330;}
+
+.event-light {
+  background-color: lightgreen;
+  color: red;
+
+  transition: color  1000ms ease-in;
+  transition: background-color  1000ms ease-in;
+}
+
+.event-light a {
+  color: black!important;
+  text-decoration: none;
+} 
+
+
+/*Bouton d'ajout*/
+
+.add__button {
+  display: block;
+  background-color: #007bff;
+  color: #FFF;
+  width: 55px;
+  height: 55px;
+  line-height: 55px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 30px;
+  border-radius: 50%;
+
+  box-shadow: 0 6px 10px 0 #0000001a,0 1px 18px 0 #0000001a,0 3px 5px -1px #000;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  transition: transform 0.3s ease-in;
+}
+
+.add__button:hover {
+  color: #FFF;
+  text-decoration: none;
+  transform: scale(1.2);
+}
+
+/*Bouton navigation calendier*/
+
+.cal_pages {font-weight: bold;}
+
+.cal_pages:hover {
+  background: rgba(0,0,0,0);
+  color: #007bff;
+  transition: color  1000ms ease-in;
+  transition: background-color  1000ms ease-in;
+}
+
+
+.login-btn {margin-left: 13px;}
+
+/*Logos sportifs*/
+
+.sexe-logo {
+  height: 32px;
+  width: 32px;
+  padding: 0;
+  margin-bottom: 0.1rem;
+}
+
+.men {background-color: lightblue;}
+.women {background-color: pink;}
+
+.legend {
+  grid-column: 1;
+  align-self: center;
+}
+
+.club-list, .sub-club-list{list-style: none;}
+
+.club-list, .sub-club-list{padding-left:0;}
+.calendar-nav {text-align: center}

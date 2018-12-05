@@ -1,0 +1,215 @@
+* {box-sizing: border-box;}
+
+:root {
+  --item-bg: #3b6cde;
+  --item-bg-hover: #1d366f;
+  --event-bg:#db583a;
+  --event-bg-hover:#f2cfbb;
+
+}
+
+.item {
+  background-color: var(--item-bg);
+  border-radius: 1rem;
+  cursor: pointer;
+  color: white;
+  margin-bottom: 2rem;
+  padding: 0 14px 1rem;
+  transition: box-shadow .3s;
+}
+
+.item:hover .event {background-color: var(--event-bg-hover);}
+
+.item:hover {background-color: var(--item-bg-hover);}
+
+.marker-active {background-color: var(--item-bg-hover);}
+
+.marker-active .event{background-color: var(--event-bg-hover);}
+
+.item h4 {
+  color: white;
+  margin: 1rem 0 0.5rem 0;
+  text-align: center;
+}
+
+.item p {margin: 0 0 1rem 0;}
+
+@media only screen and (min-width: 1400px){
+  .item-logo{
+  max-height: 225px;
+  max-width: 225px;
+  }
+}
+
+@media only screen and (min-width: 1250px) and (max-width: 1400px){
+  .item-logo{
+  max-height: 190px;
+  max-width: 190px;
+  }
+}
+
+@media only screen and (min-width: 1070px) and (max-width: 1249px){
+  .item-logo{
+  max-height: 155px;
+  max-width: 155px;
+  }
+}
+@media only screen and (max-width: 1069px){
+  .item-logo{
+  max-height: 120px;
+  max-width: 120px;
+  }
+}
+
+.map {height: 100vh;}
+
+
+.item-logo {
+  display: block;
+  height: auto;
+  margin: 1rem auto;
+  width: auto;
+}
+
+
+.leaflet-container{ margin-bottom : 25px;}
+
+
+@media only screen and (min-width: 1010px) {
+  .main-content {
+    display: grid;
+    grid-template-columns: 7fr 4fr;
+  }
+
+  .leaflet-container{
+    margin-right : 25px;
+  }
+
+  .list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 15px;
+    margin: 0 15px;
+  }
+
+  .map {
+    background-color: #CCCCCC;
+    position: sticky!important;
+    left: 0;
+    right: 0;
+    top: 0;
+  }
+}
+
+
+
+@media only screen and (min-width: 640px) and (max-width: 1009px){
+  .list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 30px;
+    margin: 0 30px;
+  }
+}
+
+@media only screen and (min-width: 430px) and (max-width: 639px){
+  .list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 30px;
+    margin: 0 30px;
+  }
+}
+
+
+.matchtime { font-family: courier;}
+
+.event {
+  background-color: var(--event-bg);
+  color: black;
+  font-size: 1.1rem;
+  margin: 1rem auto;
+  padding: 0.3rem;
+
+  -moz-box-shadow: 7px 7px 5px 0px #343434;
+  -webkit-box-shadow: 7px 7px 5px 0px #343434;
+  -o-box-shadow: 7px 7px 5px 0px #343434;
+  box-shadow: 7px 7px 5px 0px #343434;
+  filter:progid:DXImageTransform.Microsoft.Shadow(color=#343434, Direction=135, Strength=5);
+
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.img-icon {display: inline-block;}
+
+.sexe-logo {
+  height: 64px;
+  padding: 0;
+  width: 64px;
+}
+
+.men {background-color: lightblue;}
+.women {background-color: pink;}
+
+
+.match-infos {
+  font-weight: bold;
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+.match-detail{margin: 0.4rem 0;}
+
+
+/*style des liens sites*/
+
+.club__link {
+  background-color: var(--event-bg);
+  color: white;
+  display: block;
+  
+  width: 120px;
+  margin: 0 auto;
+
+  border: 2px solid var(--event-bg);
+  border-radius: 0.6rem;
+
+  font-weight: normal;
+  text-align: center;
+  text-decoration: none;
+  transition: transform 0.3s;
+}
+
+.club__link:hover {
+  background-color: var(--item-bg);
+  color: white;
+  border-color: tomato;
+  font-weight: bold;
+
+  text-decoration: none;
+  transition: font-weight 600ms linear;
+  transition: color  600ms linear;
+  transition: background-color  600ms linear;
+
+  transition: transform  300ms ease-in;
+  transform: scale(1.1);
+}
+
+.leaflet-popup:not(.is-expanded){  cursor: pointer;}
+
+.club__logo{
+  width: 65px;
+  height: 65px;
+  cursor: pointer;
+}
+
+.club__button {  padding: 0;}
+
+.event:hover {transform: scale(1.04);}
+
+.card-separator {border-top: 1px dashed white;}
+
+.is-expanded .leaflet-popup-content {  width: 300px;}
